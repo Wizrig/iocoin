@@ -32,3 +32,13 @@ done
 
 sudo iptables -S INPUT  | grep 33764
 sudo iptables -S OUTPUT | grep 33764
+
+
+
+sudo iptables -S INPUT  | awk '/--dport 33764/ {sub(/^-A /,"-D "); print}' | while read -r r; do sudo iptables $r; done
+sudo iptables -S OUTPUT | awk '/--dport 33764/ {sub(/^-A /,"-D "); print}' | while read -r r; do sudo iptables $r; done
+sudo iptables -S INPUT | grep 33764
+sudo iptables -S OUTPUT | grep 33764
+
+
+sudo sh -c 'iptables-save > /etc/iptables/rules.v4'
