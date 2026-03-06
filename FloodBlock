@@ -1,0 +1,6 @@
+sudo iptables -I INPUT -p tcp --dport 33764 -s 45.33.109.18 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 45.33.109.18 -j DROP
+sudo iptables -I INPUT -p tcp --dport 33764 -s 45.79.115.134 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 45.79.115.134 -j DROP
+sudo iptables -I INPUT -p tcp --dport 33764 -s 45.79.115.59 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 45.79.115.59 -j DROP
+sudo iptables -I INPUT -p tcp --dport 33764 -s 45.79.207.181 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 45.79.207.181 -j DROP
+sudo iptables -I INPUT -p tcp --dport 33764 -s 46.42.19.237 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 46.42.19.237 -j DROP
+sudo iptables -I INPUT -p tcp --dport 33764 -s 50.116.26.161 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 50.116.26.161 -j DROP
