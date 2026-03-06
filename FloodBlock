@@ -4,3 +4,11 @@ sudo iptables -I INPUT -p tcp --dport 33764 -s 45.79.115.59 -j DROP; sudo iptabl
 sudo iptables -I INPUT -p tcp --dport 33764 -s 45.79.207.181 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 45.79.207.181 -j DROP
 sudo iptables -I INPUT -p tcp --dport 33764 -s 46.42.19.237 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 46.42.19.237 -j DROP
 sudo iptables -I INPUT -p tcp --dport 33764 -s 50.116.26.161 -j DROP; sudo iptables -I OUTPUT -p tcp --dport 33764 -d 50.116.26.161 -j DROP
+
+
+sudo netfilter-persistent save 2>/dev/null || sudo sh -c 'iptables-save > /etc/iptables/rules.v4'
+
+
+sudo iptables -S INPUT | grep 33764
+sudo iptables -S OUTPUT | grep 33764
+sudo systemctl status iocoind --no-pager
