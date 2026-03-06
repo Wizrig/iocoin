@@ -12,3 +12,8 @@ sudo netfilter-persistent save 2>/dev/null || sudo sh -c 'iptables-save > /etc/i
 sudo iptables -S INPUT | grep 33764
 sudo iptables -S OUTPUT | grep 33764
 sudo systemctl status iocoind --no-pager
+
+
+sudo mkdir -p /etc/iptables
+sudo sh -c 'iptables-save > /etc/iptables/rules.v4'
+( sudo crontab -l 2>/dev/null; echo "@reboot /sbin/iptables-restore < /etc/iptables/rules.v4" ) | sudo crontab -
